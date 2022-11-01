@@ -26,4 +26,9 @@ class Router {
             echo "Error 404: Página no encontrada";
         }
     }
+
+    // Muestra una vista
+    public function render($view) {
+        include __DIR__ . "/views/$view.php";
+    }
 }
