@@ -3,7 +3,6 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
-use Controllers\Controllers;
 use Controllers\PropiedadController;
 
 $router = new Router();
