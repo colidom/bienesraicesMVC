@@ -1,14 +1,17 @@
 <?php
 
 namespace Controllers;
+
 use MVC\Router;
 use Model\Propiedad;
 use Model\Vendedor;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class PropiedadController {
+class PropiedadController
+{
 
-    public static function index(Router $router) {
+    public static function index(Router $router)
+    {
 
         $propiedades = Propiedad::all();
         $resultado = $_GET['resultado'] ?? null;
@@ -19,7 +22,8 @@ class PropiedadController {
         ]);
     }
 
-    public static function crear(Router $router) {
+    public static function crear(Router $router)
+    {
 
         $propiedad = new Propiedad;
         $vendedores = Vendedor::all();
@@ -65,7 +69,8 @@ class PropiedadController {
         ]);
     }
 
-    public static function actualizar(Router $router) {
+    public static function actualizar(Router $router)
+    {
         $id = validarORedireccionar('/admin');
 
         // Obtener los datos de la propiedad
@@ -111,7 +116,8 @@ class PropiedadController {
         ]);
     }
 
-    public static function eliminar() {
+    public static function eliminar()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Validar ID
