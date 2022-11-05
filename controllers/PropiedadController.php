@@ -14,10 +14,12 @@ class PropiedadController
     {
 
         $propiedades = Propiedad::all();
+        $vendedores = Vendedor::all();
         $resultado = $_GET['resultado'] ?? null;
 
         $router->render('/propiedades/admin', [
             'propiedades' => $propiedades,
+            'vendedores' => $vendedores,
             'resultado' => $resultado
         ]);
     }
