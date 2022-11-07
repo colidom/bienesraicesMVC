@@ -32,8 +32,18 @@ class VendedorController {
         ]);
     }
 
-    public static function actualizar() {
-        echo "Actualizar vendedor";
+    public static function actualizar(Router $router) {
+
+        // Array con mensajes de errores
+        $errores = Vendedor::getErrores();
+        $id = validarORedireccionar('/admin');
+        // Obtener los datos del vendedor a actualizar
+        $vendedor = Vendedor::find($id);
+
+        $router->render('/vendedores/actualizar', [
+            'vendedor' => $vendedor,
+            'errores' => $errores           
+        ]);
     }
 
     public static function eliminar() {
