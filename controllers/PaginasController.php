@@ -50,7 +50,7 @@ class PaginasController {
         $router->render('paginas/entrada');
     }
 
-    public static function contacto() {
-        echo "Desde contacto";
+    public static function contacto(Router $router) {
+        $router->render('paginas/contacto');
     }
 }
