@@ -11,7 +11,7 @@
         </div>
 
         <div class="texto-entrada">
-            <a href="entrada.php">
+            <a href="/entrada">
                 <h4>Terraza en el techo de tu casa</h4>
                 <p>Escrito el: <span>25/09/2022</span> por: <span>Colidom</span></p>
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="texto-entrada">
-            <a href="entrada.php">
+            <a href="/entrada">
                 <h4>Guía para la decoración de tu hogar</h4>
                 <p>Escrito el: <span>25/09/2022</span> por: <span>Colidom</span></p>
 
@@ -47,7 +47,7 @@
         </div>
 
         <div class="texto-entrada">
-            <a href="entrada.php">
+            <a href="/entrada">
                 <h4>Terraza en el techo de tu casa</h4>
                 <p>Escrito el: <span>25/09/2022</span> por: <span>Colidom</span></p>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="texto-entrada">
-            <a href="entrada.php">
+            <a href="/entrada">
                 <h4>Guía para la decoración de tu hogar</h4>
                 <p>Escrito el: <span>25/09/2022</span> por: <span>Colidom</span></p>
 
