@@ -12,14 +12,14 @@
     ?>
 
     <div class="alinear-derecha">
-        <a href="anuncios.php" class="boton-verde">Ver todas</a>
+        <a href="/propiedades" class="boton-verde">Ver todas</a>
     </div>
 </section>
 
 <section class="imagen-contacto">
     <h2>Encuentra la casa de tus sueños</h2>
     <p>Rellena el formulario de contacto y un asesor se pondrá en contacto contigo a la mayor brevedad</p>
-    <a href="contacto.php" class="boton-amarillo">Contáctanos</a>
+    <a href="/contacto" class="boton-amarillo">Contáctanos</a>
 </section>
 
 <div class="contenedor seccion seccion-inferior">
@@ -36,7 +36,7 @@
             </div>
 
             <div class="texto-entrada">
-                <a href="entrada.php">
+                <a href="/entrada">
                     <h4>Terraza en el techo de tu casa</h4>
                     <p class="informacion-meta">Escrito el: <span>25/09/2022</span> por: <span>Colidom</span></p>
 
@@ -54,7 +54,7 @@
             </div>
 
             <div class="texto-entrada">
-                <a href="entrada.php">
+                <a href="/entrada">
                     <h4>Guía para la decoración de tu hogar</h4>
                     <p class="informacion-meta">Escrito el: <span>25/09/2022</span> por: <span>Colidom</span></p>
 
