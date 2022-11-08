@@ -19,9 +19,7 @@ class PaginasController {
 
     public static function nosotros(Router $router) {
         
-        $router->render('paginas/nosotros', [
-
-        ]);
+        $router->render('paginas/nosotros');
     }
 
     public static function propiedades(Router $router) {
