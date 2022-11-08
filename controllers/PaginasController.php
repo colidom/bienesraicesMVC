@@ -50,6 +50,6 @@ class PaginasController {
     }
 
     public static function contacto() {
-        echo "Desde entrada";
+        echo "Desde contacto";
     }
 }
