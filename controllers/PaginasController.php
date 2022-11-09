@@ -81,15 +81,15 @@ class PaginasController {
             // Definir el contenido
             $contenido  = '<html>';
             $contenido .= '<p>Tienes un nuevo mensaje de:</p>';
-            $contenido .= '<p>Nombre: ' . $respuestas['nombre'] . ' </p>';
-            $contenido .= '<p>Email: ' . $respuestas['email'] . ' </p>';
-            $contenido .= '<p>Teléfono: ' . $respuestas['telefono'] . ' </p>';
+            $contenido .= '<p>Nombre: ' . $respuestas['nombre'] . '</p>';
+            $contenido .= '<p>Email: ' . $respuestas['email'] . '</p>';
+            $contenido .= '<p>Teléfono: ' . $respuestas['telefono'] . '</p>';
             $contenido .= '<p>Mensaje: ' . $respuestas['mensaje'] . ' </p>';
-            $contenido .= '<p>Vende o Compra: ' . $respuestas['tipo'] . ' </p>';
-            $contenido .= '<p>Presupuesto: ' . $respuestas['precio'] . ' </p>';
-            $contenido .= '<p>Prefiere ser contactado por: ' . $respuestas['contacto'] . ' </p>';
-            $contenido .= '<p>Fecha Contacto: ' . $respuestas['fecha'] . ' </p>';
-            $contenido .= '<p>Hora Contacto: ' . $respuestas['hora'] . ' </p>';
+            $contenido .= '<p>Vende o Compra: ' . $respuestas['tipo'] . '</p>';
+            $contenido .= '<p>Presupuesto: ' . $respuestas['precio'] . '</p>';
+            $contenido .= '<p>Prefiere ser contactado por: ' . $respuestas['contacto'] . '</p>';
+            $contenido .= '<p>Fecha Contacto: ' . $respuestas['fecha'] . '</p>';
+            $contenido .= '<p>Hora Contacto: ' . $respuestas['hora'] . '</p>';
             $contenido .= '</html>';
 
             $mail->Body = $contenido;
