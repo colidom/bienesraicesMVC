@@ -28,24 +28,26 @@ function debuguear($variable)
 
 // Escapa / Salunitza el html
 function __s($html)
-{   
+{
     $s = htmlspecialchars($html);
     return $s;
 }
 
 // Validar tipo de Contenido
-function validarTipoContenido($tipo) {
+function validarTipoContenido($tipo)
+{
     $tipos = ['propiedad', 'vendedor'];
 
     return in_array($tipo, $tipos);
 }
 
 // Muestra los mensajes
-function mostrarNotificacion($codigo) {
+function mostrarNotificacion($codigo)
+{
     $mensaje = '';
 
     switch ($codigo) {
-        case 1: 
+        case 1:
             $mensaje = 'Creado correctamente';
             break;
         case 2:
@@ -61,7 +63,8 @@ function mostrarNotificacion($codigo) {
     return $mensaje;
 }
 
-function validarORedireccionar(string $url) {
+function validarORedireccionar(string $url)
+{
     // Validar la URL por ID válido
     $id = $_GET['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT);
