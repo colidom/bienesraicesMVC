@@ -74,42 +74,37 @@ class PaginasController {
             $mail->setFrom('admin@bienesraices.com');
             $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com');
             $mail->Subject = 'Tienes un nuevo mensaje';
-
             // Habilitar HTML
             $mail->isHtml(true);
             $mail->CharSet = 'UTF-8';
 
             // Definir el contenido
-            $contenido  = '<html>';
-            $contenido .= '<p>Tienes un nuevo mensaje de:</p>';
-            $contenido .= '<p>Nombre: ' . $respuestas['nombre'] . '</p>';
+            $contenido = '<html>';
+            $contenido .= "<p><strong>Has Recibido un email:</strong></p>";
+            $contenido .= "<p>Nombre: " . $respuestas['nombre'] . "</p>";
+            $contenido .= "<p>Mensaje: " . $respuestas['mensaje'] . "</p>";
+            $contenido .= "<p>Vende o Compra: " . $respuestas['opciones'] . "</p>";
+            $contenido .= "<p>Presupuesto o Precio: $" . $respuestas['presupuesto'] . "</p>";
             
             // Enviar de forma condicional algunos campos de email o telefono
             if($respuestas['contacto'] === 'telefono') {
-                $contenido .= '<p>Eligió ser contactado por teléfono:</p>';
-                $contenido .= '<p>Teléfono: ' . $respuestas['telefono'] . '</p>';
-                $contenido .= '<p>Fecha Contacto: ' . $respuestas['fecha'] . '</p>';
-                $contenido .= '<p>Hora Contacto: ' . $respuestas['hora'] . '</p>';
+                $contenido .= "<p>Eligió ser Contactado por Teléfono:</p>";
+                $contenido .= "<p>Su teléfono es: " .  $respuestas['telefono'] ." </p>";
+                $contenido .= "<p>En la Fecha y hora: " . $respuestas['fecha'] . " - " . $respuestas['hora']  . " Horas</p>";
             } else {
-                // Es email, entonces agregamos el campo de email
-                $contenido .= '<p>Eligió ser contactado por email:</p>';
-                $contenido .= '<p>Email: ' . $respuestas['email'] . '</p>';
+                $contenido .= "<p>Eligio ser Contactado por Email:</p>";
+                $contenido .= "<p>Su Email  es: " .  $respuestas['email'] ." </p>";
             }
 
-            $contenido .= '<p>Mensaje: ' . $respuestas['mensaje'] . ' </p>';
-            $contenido .= '<p>Vende o Compra: ' . $respuestas['tipo'] . '</p>';
-            $contenido .= '<p>Presupuesto: ' . $respuestas['precio'] . '</p>';
-            $contenido .= '<p>Prefiere ser contactado por: ' . $respuestas['contacto'] . '</p>';
             $contenido .= '</html>';
-
             $mail->Body = $contenido;
             $mail->AltBody = 'Esto es un texto alternativo sin HTML';
 
             // Enviar el mensaje
-            if ($mail->send()) {
-                $mensaje = "Mensaje enviado correctamente";
+            if(!$mail->send()){
+                $mensaje = 'Hubo un Error... intente de nuevo';
             } else {
-                $mensaje = "El mensaje no se pudo enviar";
+                $mensaje = 'Email enviado Correctamente';
             }
         }
 

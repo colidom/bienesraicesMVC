@@ -27,15 +27,15 @@
         <fieldset>
             <legend>Información sobre la propiedad</legend>
 
-            <label for="opciones">Vende o Compra</label>
-            <select name="contacto[tipo]" id="opciones" required>
-                <option selected disabled value=""> --Seleccione-- </option>
-                <option value="compra">Compra</option>
-                <option value="vende">Vende</option>
+            <label for="opciones">Vende o Compra:</label>
+            <select id="opciones" name="contacto[opciones]">
+                <option value="" disabled selected>-- Seleccione --</option>
+                <option value="Compra">Compra</option>
+                <option value="Vende">Vende</option>
             </select>
 
-            <label for="presupuesto">Precio o Presupuesto</label>
-            <input type="number" id="presupuesto" placeholder="Tu Precio o Presupuesto" name="contacto[precio]" required>
+            <label for="presupuesto">  o Presupuesto</label>
+            <input type="number" id="presupuesto" placeholder="Tu Precio o Presupuesto" name="contacto[presupuesto]" required>
 
         </fieldset>
         <fieldset>
