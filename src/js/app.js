@@ -63,7 +63,6 @@ function seleccionarMetodo(e) {
 
             <label for="hora">Hora Llamada:</label>
             <input type="time" id="hora" min="09:00" max="18:00"  name="contacto[hora]" required>
-
         `;
     } else {
         contactoDiv.innerHTML = `
