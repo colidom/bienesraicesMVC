@@ -5,10 +5,12 @@ namespace Controllers;
 use MVC\Router;
 use Model\Vendedor;
 
-class VendedorController {
+class VendedorController
+{
 
-    public static function crear(Router $router) {
-        
+    public static function crear(Router $router)
+    {
+
         $vendedor = new Vendedor;
         $errores = Vendedor::getErrores();
 
@@ -32,7 +34,8 @@ class VendedorController {
         ]);
     }
 
-    public static function actualizar(Router $router) {
+    public static function actualizar(Router $router)
+    {
 
         // Array con mensajes de errores
         $errores = Vendedor::getErrores();
@@ -42,14 +45,14 @@ class VendedorController {
 
         // Ejecutar el código después de que el usuario envíe el formulario
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+
             // Asignar los valores
             $args = $_POST['vendedor'];
             // Sincronizar objeto en memoria con lo introducido por el usuario
             $vendedor->sincronizar($args);
             // Validación
             $errores = $vendedor->validar();
-            
+
             if (!$errores) {
                 $vendedor->guardar();
             }
@@ -57,12 +60,13 @@ class VendedorController {
 
         $router->render('/vendedores/actualizar', [
             'vendedor' => $vendedor,
-            'errores' => $errores           
+            'errores' => $errores
         ]);
     }
 
-    public static function eliminar() {
-        
+    public static function eliminar()
+    {
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Valida el id
