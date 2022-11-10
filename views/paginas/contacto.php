@@ -16,12 +16,6 @@
             <label for="nombre">Nombre</label>
             <input type="text" placeholder="Su nombre" id="nombre" name="contacto[nombre]" required>
 
-            <label for="email">E-mail</label>
-            <input type="email" placeholder="Su Email" id="email" name="contacto[email]" required>
-
-            <label for="telefono">Teléfono</label>
-            <input type="tel" placeholder="Su telefono" id="telefono" name="contacto[telefono]">
-
             <label for="mensaje">Mensaje:</label>
             <textarea name="contacto[mensaje]" id="mensaje" required></textarea>
 
@@ -53,13 +47,8 @@
                 <input type="radio" name="contacto[contacto]" id="contactar-email" value="email" required>
             </div>
 
-            <p>Si eligió teléfono, elija la fecha y la hora</p>
+            <div id="contacto"></div>
 
-            <label for="fecha">Fecha:</label>
-            <input type="date" name="contacto[fecha]" id="fecha">
-
-            <label for="hora">Hora:</label>
-            <input type="time" id="hora" min="09:00" max="18:00" name="contacto[hora]">
         </fieldset>
 
         <input type="submit" value="Enviar" class="boton-verde">
