@@ -17,17 +17,22 @@ class LoginController {
             $errores = $auth->validar();
 
         if(empty($errores)) {
-            // Verificar si el usuario existe
+            // Verificar si el usuario existe o no(mensaje de error)
             $resultado = $auth->existeUsuario();
 
             if(!$resultado) {
                 $errores = Admin::getErrores();
             } else {
-                
-            }
-            // Verificar el password
+                // Verificar el password
+                $autenticado = $auth->comprobarPassword($resultado);
 
-            // Autenticar el usuario
+                if ($autenticado) {
+                    // Autenticar el usuario
+                } else {
+                    // Password incorrecto(mensaje de error)
+                    $errores = Admin::getErrores();
+                }
+            }
         }
     }
         $router->render('auth/login', [
