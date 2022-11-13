@@ -38,7 +38,7 @@ class Admin extends ActiveRecord {
         $resultado = self::$db->query($query);
 
         if(!$resultado->num_rows) {
-            self::$errores[] = "El usuario no existe";
+            self::$errores[] = "Usuario/contraseña incorrectos";
             return;
         };
 
@@ -50,7 +50,7 @@ class Admin extends ActiveRecord {
         $autenticado = password_verify($this->password, $usuario->password);
 
         if (!$autenticado) {
-            self::$errores[] = "El password es incorrecto";
+            self::$errores[] = "Usuario/contraseña incorrectos";
             return;
         }
 
