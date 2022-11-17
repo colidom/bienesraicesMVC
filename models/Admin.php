@@ -63,7 +63,9 @@ class Admin extends ActiveRecord
 
     public function autenticar()
     {
-        session_start();
+        if (!isset($_SESSION)) {
+            session_start();
+        }
 
         // Eliminar el array de sesion
         $_SESSION['usuario'] = $this->email;
