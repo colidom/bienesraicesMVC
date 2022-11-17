@@ -11,7 +11,9 @@ function incluirTemplate(string $nombre, bool $inicio = false)
 
 function estaAutenticado()
 {
-    session_start();
+    if(!isset($_SESSION)) {
+        session_start();
+    }
 
     if (!$_SESSION['login']) {
         header('Location: /');
