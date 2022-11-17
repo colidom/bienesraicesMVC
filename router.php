@@ -20,7 +20,9 @@ class Router
 
     public function comprobarRutas()
     {
-        session_start();
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         $auth = $_SESSION['login'] ?? null;
 
         // Array de rutas protegidas
