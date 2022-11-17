@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class Admin extends ActiveRecord {
+class Admin extends ActiveRecord
+{
     // Base de datos
     protected static $tabla = 'usuarios';
     protected static $columnasDB = ['id', 'email', 'password'];
@@ -19,25 +20,27 @@ class Admin extends ActiveRecord {
         $this->password = $args['password'] ?? '';
     }
 
-    public function validar() {
-        if(!$this->email) {
+    public function validar()
+    {
+        if (!$this->email) {
             self::$errores[] = 'El email es obligatorio';
         }
 
-        if(!$this->password) {
+        if (!$this->password) {
             self::$errores[] = 'El password es obligatorio';
         }
 
         return self::$errores;
     }
 
-    public function existeUsuario() {
+    public function existeUsuario()
+    {
         // Revisar si el usuario existe
 
         $query = "SELECT * FROM " . self::$tabla . " WHERE email = '" . $this->email . "' LIMIT 1";
         $resultado = self::$db->query($query);
 
-        if(!$resultado->num_rows) {
+        if (!$resultado->num_rows) {
             self::$errores[] = "Usuario/contraseña incorrectos";
             return;
         };
@@ -45,7 +48,8 @@ class Admin extends ActiveRecord {
         return $resultado;
     }
 
-    public function comprobarPassword($resultado) {
+    public function comprobarPassword($resultado)
+    {
         $usuario = $resultado->fetch_object();
         $autenticado = password_verify($this->password, $usuario->password);
 
@@ -57,7 +61,8 @@ class Admin extends ActiveRecord {
         return $autenticado;
     }
 
-    public function autenticar() {
+    public function autenticar()
+    {
         session_start();
 
         // Eliminar el array de sesion
