@@ -52,7 +52,7 @@ class PropiedadController
 
             if (empty($errores)) {
                 // Crear la carpera para subir imágenes
-                if (is_dir(CARPETA_IMAGENES)) {
+                if(!is_dir(CARPETA_IMAGENES)) {
                     mkdir(CARPETA_IMAGENES);
                 }
 
