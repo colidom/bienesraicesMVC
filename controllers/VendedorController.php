@@ -50,7 +50,7 @@ class VendedorController
             $args = $_POST['vendedor'];
             // Sincronizar objeto en memoria con lo introducido por el usuario
             $vendedor->sincronizar($args);
-            // Validación
+            // Validación de campos
             $errores = $vendedor->validar();
 
             if (!$errores) {
