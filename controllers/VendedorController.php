@@ -19,7 +19,7 @@ class VendedorController
             // Crea una nueva instancia
             $vendedor = new Vendedor($_POST['vendedor']);
 
-            // Validar
+            // Validar vendedores
             $errores = $vendedor->validar();
 
             if (empty($errores)) {
